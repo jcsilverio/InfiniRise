@@ -1,95 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfiniRise Studios</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-        }
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-        }
-        header img {
-            max-width: 200px;
-        }
-        nav {
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 18px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(to right, #141e30, #243b55);
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.2em;
-        }
-        footer {
-            background-color: #1e1e1e;
-            text-align: center;
-            padding: 10px 20px;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfiniRise Studios</title>
+  <meta name="description" content="Independent Georgia studio — gameplay and combat systems, plus applied AI for real-time 3D and interactive products.">
+  <link rel="icon" href="InfiniRiseLg.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#work">Skip to content</a>
 
-<header>
-    <img src="InfiniRiseLg.png" alt="InfiniRise Studios Logo">
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#games">Our Games</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="InfiniRiseLg.png" width="48" height="48" alt="">
+        InfiniRise Studios
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#credits">Credits</a>
+        <a href="#applied-ai">Applied AI</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-    <h1>Welcome to InfiniRise Studios</h1>
-    <p>Where innovation meets imagination. Explore cutting-edge video games and stunning visual effects crafted for immersive experiences.</p>
-</section>
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <div>
+        <p class="kicker">Atlanta, Georgia</p>
+        <h1 id="hero-heading">InfiniRise Studios</h1>
+        <p class="lede">Independent Georgia studio — gameplay and combat systems, plus applied AI for real-time 3D and interactive products.</p>
+      </div>
+      <img src="InfiniRiseLg.png" width="256" height="256" alt="InfiniRise Studios mark: an infinity sign over a sunrise.">
+    </section>
 
-<section id="about" style="padding: 50px 20px; text-align: center;">
-    <h2>About Us</h2>
-    <p>InfiniRise Studios specializes in publishing cutting-edge video games and stunning visual effects, offering innovative, immersive experiences to players and viewers. Located in Atlanta, GA, InfiniRise Studios is dedicated to pushing the boundaries of digital entertainment.</p>
-</section>
+    <section id="work">
+      <div class="wrap">
+        <p class="kicker">Two lanes</p>
+        <h2>What we take on</h2>
+        <div class="lanes">
+          <article class="lane">
+            <h3>Gameplay and combat systems</h3>
+            <p>Contract work on abilities, bosses, enemy encounters, and the animation-system integration that makes them readable in-engine.</p>
+          </article>
+          <article class="lane">
+            <h3>Applied AI at the model-output boundary</h3>
+            <p>Generated content and balance data that survives review, or typed runtime contracts that hold in-engine. Games, avatars, simulation, AR. Contract or full-time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="games" style="padding: 50px 20px; text-align: center; background-color: #1e1e1e;">
-    <h2>Our Games</h2>
-    <p>Stay tuned for updates on our latest projects and releases!</p>
-</section>
+    <section id="credits">
+      <div class="wrap">
+        <p class="kicker">Shipped</p>
+        <h2>Credits</h2>
+        <ul class="credits">
+          <li>Gears of War: E-Day — boss encounters and animation-system integration</li>
+          <li>Unannounced AAA title for a major publisher — combat and animation systems</li>
+          <li>Battlefield: Portal — weapons, vehicles, and modes</li>
+          <li>Killing Floor 2 — sole game designer, R&amp;D through ship</li>
+          <li>EVE Online — NPC AI, player abilities, and economy systems</li>
+          <li>SMITE / Tribes: Ascend / Global Agenda — QA, gameplay, and systems</li>
+          <li>Home Depot Innovation Lab — AR in-store prototype (ARKit, Watson, product lookup)</li>
+          <li>SiriusXM + Pandora — production web playback (WebAudio / MSE)</li>
+        </ul>
+      </div>
+    </section>
 
-<section id="contact" style="padding: 50px 20px; text-align: center;">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to collaborate? Reach out to us at <a href="mailto:info@infinirisestudios.com" style="color: #00aaff;">contact@infinirisestudios.com</a>.</p>
-</section>
+    <section id="applied-ai">
+      <div class="wrap">
+        <p class="kicker">Proof</p>
+        <h2>Applied AI</h2>
+        <p class="proof">AI Traders — multi-agent orchestration with typed MCP tool boundaries, structured outputs, and fail-closed execution validated by a safety suite.</p>
+        <p class="proof">Real-time 3D integration demo — text intent to typed MotionExport to Unreal montage playback, fail-closed (catalog routing, not motion generation).</p>
+        <p class="proof">QLoRA fine-tuning — published LoRA adapter for Llama 3.2 3B on Hugging Face.</p>
+        <p class="note">Repos stay private until they are ready for a public URL. The work is real; a link is not the proof.</p>
+      </div>
+    </section>
 
-<footer>
-    <p>&copy; 2024 InfiniRise Studios. All rights reserved.</p>
-</footer>
+    <section id="contact" class="contact-block">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2>Start a conversation</h2>
+        <p>Hiring managers, contract leads, and recruiters working either lane — write directly. Replies come from the same address.</p>
+        <p><a class="mail" href="mailto:contact@infinirisestudios.com">contact@infinirisestudios.com</a></p>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 InfiniRise Studios LLC</p>
+    </div>
+  </footer>
 </body>
 </html>
