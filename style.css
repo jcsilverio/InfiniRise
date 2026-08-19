@@ -85,6 +85,14 @@ header {
   border-radius: 50%;
 }
 
+.tm {
+  font-size: 0.55em;
+  font-weight: 600;
+  line-height: 0;
+  margin-left: 0.12em;
+  vertical-align: super;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
