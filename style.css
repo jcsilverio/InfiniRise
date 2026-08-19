@@ -85,12 +85,15 @@ header {
   border-radius: 50%;
 }
 
+.brand-name {
+  white-space: nowrap;
+}
+
 .tm {
   font-size: 0.55em;
   font-weight: 600;
-  line-height: 0;
-  margin-left: 0.12em;
-  vertical-align: super;
+  letter-spacing: 0;
+  margin-left: 0.05em;
 }
 
 .nav-links {
