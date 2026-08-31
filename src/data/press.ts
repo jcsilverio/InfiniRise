@@ -20,6 +20,7 @@ export const coverage: PressLink[] = [
 
 export const speaking: PressLink[] = [
   { label: 'GDC Scholars Judge', href: 'https://gdconf.com/' },
+  { label: 'Global Game Jam, Judge', href: 'https://globalgamejam.org/' },
   {
     label: 'Museum of Design Atlanta, exhibit and talk on women in video games',
     href: 'https://museumofdesign.org/',
