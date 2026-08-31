@@ -9,6 +9,31 @@ import { youtubeVideoId } from '../lib/youtube';
       <p class="kicker">Selected games</p>
     </div>
     <h2>Titles</h2>
+    <div class="title-featured reveal">
+      <a
+        class="title-card"
+        href="https://youtu.be/-TW2SnAipsE"
+        data-trailer
+        data-trailer-id="-TW2SnAipsE"
+        data-trailer-title="Gears of War: E-Day"
+      >
+        <div class="title-card__media">
+          <img
+            src="https://img.youtube.com/vi/-TW2SnAipsE/maxresdefault.jpg"
+            alt=""
+            loading="lazy"
+            width="640"
+            height="360"
+          />
+          <div class="title-card__scrim" aria-hidden="true"></div>
+          <span class="play-mark" aria-hidden="true"></span>
+          <div class="title-card__body">
+            <h3 class="title-card__title">Gears of War: E-Day</h3>
+            <span class="title-card__link">Watch trailer</span>
+          </div>
+        </div>
+      </a>
+    </div>
     <div class="title-grid">
       {
         titles.map((item) => {

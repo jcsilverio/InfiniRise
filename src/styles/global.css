@@ -343,58 +343,14 @@ h2 {
   text-decoration: none;
 }
 
-.spotlight {
-  display: grid;
-  grid-template-columns: 0.45fr 0.55fr;
-  gap: 2rem;
-  align-items: center;
+.title-featured {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
 }
 
-.spotlight__media {
-  display: block;
-  position: relative;
-  border-radius: 22%;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color 200ms ease-out;
-}
-
-.spotlight__media:hover,
-.spotlight__media:focus-visible {
-  border-color: var(--gold);
-  outline: none;
-}
-
-.spotlight__media img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-}
-
-.spotlight__facts {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.spotlight__facts li {
-  color: var(--muted);
-}
-
-.spotlight__facts strong {
-  display: block;
-  color: var(--gold);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.2rem;
+.title-featured .title-card {
+  width: min(100%, 40rem);
 }
 
 .play-mark {
@@ -637,8 +593,7 @@ footer {
   }
 
   .lanes,
-  .title-grid,
-  .spotlight {
+  .title-grid {
     grid-template-columns: 1fr;
   }
 }
