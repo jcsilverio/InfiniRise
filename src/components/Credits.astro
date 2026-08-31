@@ -1,0 +1,19 @@
+---
+import { credits } from '../data/credits';
+---
+
+<section id="credits">
+  <div class="wrap">
+    <div class="kicker-wrap">
+      <p class="kicker">Selected credits</p>
+    </div>
+    <h2>Credits</h2>
+    <ul class="credits">
+      {
+        credits.map((item) => (
+          <li class="reveal" set:html={item.html} />
+        ))
+      }
+    </ul>
+  </div>
+</section>

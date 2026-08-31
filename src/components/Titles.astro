@@ -1,0 +1,43 @@
+---
+import { titles } from '../data/titles';
+import { youtubeVideoId } from '../lib/youtube';
+---
+
+<section id="titles">
+  <div class="wrap">
+    <div class="kicker-wrap">
+      <p class="kicker">Selected games</p>
+    </div>
+    <h2>Titles</h2>
+    <div class="title-grid">
+      {
+        titles.map((item) => {
+          const videoId = youtubeVideoId(item.trailerUrl);
+          return (
+            <a
+              class="title-card reveal"
+              href={item.trailerUrl}
+              data-trailer
+              data-trailer-id={videoId}
+              data-trailer-title={item.title}
+            >
+              <div class="title-card__media">
+                <img src={item.image} alt="" loading="lazy" width="640" height="360" />
+                <div class="title-card__scrim" aria-hidden="true"></div>
+                <span class="play-mark" aria-hidden="true"></span>
+                <div class="title-card__body">
+                  <h3 class="title-card__title">
+                    {item.title}
+                    {item.cancelled ? <span class="status-tag">Cancelled</span> : null}
+                  </h3>
+                  <p class="title-card__note">{item.note}</p>
+                  <span class="title-card__link">Watch trailer</span>
+                </div>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

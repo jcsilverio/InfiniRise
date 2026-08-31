@@ -1,0 +1,57 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Joelle Silverio | InfiniRise Studios',
+  description = 'Joelle Silverio, principal gameplay and combat designer. Combat design and applied AI for real-time 3D, through InfiniRise Studios in Atlanta.',
+} = Astro.props;
+
+const canonical = 'https://infinirisestudios.com/';
+const ogImage = new URL("/images/hero.jpg", Astro.site).href;
+const linkedIn = 'https://www.linkedin.com/in/joellesilverio/';
+const huggingFace = 'https://huggingface.co/jcsilv';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Joelle Silverio',
+  jobTitle: 'Principal Gameplay and Combat Designer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'InfiniRise Studios LLC',
+  },
+  sameAs: [linkedIn, huggingFace],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/InfiniRiseLg.png" type="image/png" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script defer data-domain="infinirisestudios.com" src="https://plausible.io/js/script.js"></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,42 @@
+---
+import { coverage, speaking } from '../data/press';
+---
+
+<section id="press">
+  <div class="wrap">
+    <div class="kicker-wrap">
+      <p class="kicker">Recognition</p>
+    </div>
+    <h2>Press</h2>
+
+    <div class="press-group reveal">
+      <h3>Coverage</h3>
+      <ul class="credits">
+        {
+          coverage.map((item) => (
+            <li>
+              <a href={item.href} data-preview data-preview-title={item.label}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="press-group reveal">
+      <h3>Speaking</h3>
+      <ul class="credits">
+        {
+          speaking.map((item) => (
+            <li>
+              <a href={item.href} data-preview data-preview-title={item.label}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

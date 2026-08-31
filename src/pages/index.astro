@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Work from '../components/Work.astro';
+import Titles from '../components/Titles.astro';
+import GearsSpotlight from '../components/GearsSpotlight.astro';
+import Credits from '../components/Credits.astro';
+import Press from '../components/Press.astro';
+import AppliedAI from '../components/AppliedAI.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import PreviewModal from '../components/PreviewModal.astro';
+---
+
+<BaseLayout>
+  <a class="skip" href="#work">Skip to content</a>
+  <Header />
+  <main id="top">
+    <Hero />
+    <Work />
+    <Titles />
+    <GearsSpotlight />
+    <Credits />
+    <Press />
+    <AppliedAI />
+    <Contact />
+  </main>
+  <Footer />
+  <PreviewModal />
+</BaseLayout>
+
+<script>
+  import { initPreviewModal, initSiteMotion } from '../scripts/site.ts';
+
+  initSiteMotion();
+  initPreviewModal();
+</script>

@@ -1,0 +1,17 @@
+{
+  "name": "infinirise",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Website for InfiniRise Studios: https://infinirisestudios.com",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.5",
+    "@fontsource-variable/source-serif-4": "^5.2.5",
+    "astro": "^5.7.10"
+  }
+}
