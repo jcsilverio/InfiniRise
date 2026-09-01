@@ -27,7 +27,12 @@ export function initSiteMotion(): void {
           if (!entry.isIntersecting) return;
           const id = entry.target.id;
           navLinks.forEach((link) => {
-            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+            const href = link.getAttribute('href') ?? '';
+            if (!href.includes('#')) return;
+            link.classList.toggle(
+              'is-active',
+              href === `#${id}` || href === `/#${id}` || href.endsWith(`#${id}`),
+            );
           });
         });
       },

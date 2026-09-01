@@ -2,28 +2,38 @@
 interface Props {
   title?: string;
   description?: string;
+  ogImagePath?: string;
+  canonicalPath?: string;
+  extraJsonLd?: Record<string, unknown>;
 }
 
 const {
-  title = 'Joelle Silverio | InfiniRise Studios',
-  description = 'Joelle Silverio, principal gameplay and combat designer. Combat design and applied AI for real-time 3D, through InfiniRise Studios in Atlanta.',
+  title = 'InfiniRise Studios',
+  description = 'InfiniRise Studios. An unannounced product is currently in development. Atlanta, Georgia.',
+  ogImagePath = '/InfiniRiseLg.png',
+  canonicalPath = '/',
+  extraJsonLd,
 } = Astro.props;
 
-const canonical = 'https://infinirisestudios.com/';
-const ogImage = new URL("/images/hero.jpg", Astro.site).href;
+const site = Astro.site ?? new URL('https://infinirisestudios.com');
+const canonical = new URL(canonicalPath, site).href;
+const ogImage = new URL(ogImagePath, site).href;
+const logo = new URL('/InfiniRiseLg.png', site).href;
 const linkedIn = 'https://www.linkedin.com/in/joellesilverio/';
 const huggingFace = 'https://huggingface.co/jcsilv';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Joelle Silverio',
-  jobTitle: 'Principal Gameplay and Combat Designer',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'InfiniRise Studios LLC',
+  '@type': 'Organization',
+  name: 'InfiniRise Studios LLC',
+  url: new URL('/', site).href,
+  logo,
+  founder: {
+    '@type': 'Person',
+    name: 'Joelle Silverio',
+    jobTitle: 'Principal Gameplay and Combat Designer',
+    sameAs: [linkedIn, huggingFace],
   },
-  sameAs: [linkedIn, huggingFace],
 };
 ---
 
@@ -32,6 +42,21 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b132b" />
+    <link
+      rel="preload"
+      href="/fonts/bricolage-grotesque-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/source-serif-4-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -45,6 +70,9 @@ const jsonLd = {
 
     <link rel="icon" href="/InfiniRiseLg.png" type="image/png" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {extraJsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />
+    )}
     <script defer data-domain="infinirisestudios.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>

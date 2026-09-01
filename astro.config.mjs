@@ -4,6 +4,6 @@ export default defineConfig({
   site: 'https://infinirisestudios.com',
   outDir: 'dist',
   build: {
-    format: 'file',
+    format: 'directory',
   },
 });

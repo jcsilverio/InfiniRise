@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Founder from '../components/Founder.astro';
+import Credits from '../components/Credits.astro';
+import Press from '../components/Press.astro';
+import Footer from '../components/Footer.astro';
+import PreviewModal from '../components/PreviewModal.astro';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Joelle Silverio',
+  jobTitle: 'Principal Gameplay and Combat Designer',
+  image: new URL('/images/hero.jpg', Astro.site).href,
+  worksFor: {
+    '@type': 'Organization',
+    name: 'InfiniRise Studios LLC',
+    url: 'https://infinirisestudios.com/',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/joellesilverio/',
+    'https://huggingface.co/jcsilv',
+  ],
+};
+---
+
+<BaseLayout
+  title="Joelle Silverio, founder | InfiniRise Studios"
+  description="InfiniRise Studios, founded by Joelle Silverio. Gameplay and combat design, and applied AI for real-time 3D. Atlanta, Georgia."
+  ogImagePath="/images/hero.jpg"
+  canonicalPath="/about/"
+  extraJsonLd={personJsonLd}
+>
+  <a class="skip" href="#founder">Skip to content</a>
+  <Header />
+  <main id="top">
+    <Founder />
+    <Credits />
+    <Press />
+  </main>
+  <Footer />
+  <PreviewModal />
+</BaseLayout>
+
+<script>
+  import { initPreviewModal, initSiteMotion } from '../scripts/site.ts';
+
+  initSiteMotion();
+  initPreviewModal();
+</script>
