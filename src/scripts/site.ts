@@ -43,9 +43,13 @@ export function initSiteMotion(): void {
 
   const reduced = prefersReducedMotion();
   const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
-  revealTargets.forEach((el, index) => {
+  const groupCounts = new Map<Element, number>();
+  revealTargets.forEach((el) => {
+    const group = el.closest('section') ?? document.body;
+    const index = groupCounts.get(group) ?? 0;
+    groupCounts.set(group, index + 1);
     if (!reduced) {
-      el.style.transitionDelay = `${index * 60}ms`;
+      el.style.transitionDelay = `${Math.min(index * 60, 300)}ms`;
     }
     const revealObserver = new IntersectionObserver(
       ([entry]) => {
@@ -58,6 +62,7 @@ export function initSiteMotion(): void {
     );
     revealObserver.observe(el);
   });
+  document.documentElement.classList.add('reveal-ready');
 }
 
 export function initPreviewModal(): void {

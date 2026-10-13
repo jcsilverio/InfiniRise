@@ -50,6 +50,14 @@ const jsonLd = {
 
       gtag('config', 'AW-18509379690');
     </script>
+    <script is:inline>
+      // .reveal content stays visible unless the reveal script initializes within 2s.
+      document.documentElement.classList.add('js-reveal');
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.classList.contains('reveal-ready')) root.classList.remove('js-reveal');
+      }, 2000);
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b132b" />
