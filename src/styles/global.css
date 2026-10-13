@@ -592,6 +592,21 @@ h2 {
   color: var(--muted);
 }
 
+.policy h2 {
+  margin-top: 2.25rem;
+  font-size: 1.3rem;
+}
+
+.policy h2:first-child {
+  margin-top: 0;
+}
+
+.policy p {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
 .contact-block {
   background: var(--bg-raised);
   border-top: 1px solid var(--line);

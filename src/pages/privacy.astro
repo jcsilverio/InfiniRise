@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Privacy | InfiniRise Studios"
+  description="How infinirisestudios.com collects and uses visitor information."
+  canonicalPath="/privacy/"
+>
+  <a class="skip" href="#privacy">Skip to content</a>
+  <Header />
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="privacy-heading">
+      <div>
+        <div class="kicker-wrap">
+          <p class="kicker">Last updated October 13, 2026</p>
+        </div>
+        <h1 id="privacy-heading">Privacy</h1>
+        <p class="lede">
+          This page explains what information infinirisestudios.com collects when you visit,
+          and how it is used.
+        </p>
+      </div>
+    </section>
+
+    <section id="privacy" class="policy">
+      <div class="wrap">
+        <h2>Analytics</h2>
+        <p>
+          We use <a href="https://plausible.io/data-policy">Plausible Analytics</a> to count
+          visits. Plausible does not use cookies and does not collect personal information. It
+          records aggregate data such as page views, referring sites, browser type, and country.
+        </p>
+
+        <h2>Advertising measurement</h2>
+        <p>
+          This site loads the Google Ads tag, which uses cookies and similar technologies to
+          measure whether visits and actions on this site came from our Google ads. Google may
+          collect device and browser identifiers and your IP address for this purpose. See
+          <a href="https://policies.google.com/technologies/partner-sites">how Google uses
+          information from sites that use its services</a>. You can manage ad personalization at
+          <a href="https://myadcenter.google.com/">My Ad Center</a>.
+        </p>
+
+        <h2>Email</h2>
+        <p>
+          If you email us, we use your address and message only to reply and to keep a record of
+          the conversation.
+        </p>
+
+        <h2>Hosting</h2>
+        <p>
+          Our hosting provider may log basic request information, such as IP address and browser
+          type, for security and operations.
+        </p>
+
+        <h2>Sharing</h2>
+        <p>We do not sell personal information.</p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy:
+          <a href="mailto:contact@infinirisestudios.com">contact@infinirisestudios.com</a>.
+          InfiniRise Studios LLC, Georgia, United States.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { initSiteMotion } from '../scripts/site.ts';
+
+  initSiteMotion();
+</script>

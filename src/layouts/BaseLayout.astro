@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = 'InfiniRise Studios',
-  description = 'InfiniRise Studios. An unannounced product is currently in development. Atlanta, Georgia.',
+  description = 'InfiniRise Studios builds software products and web tools. Atlanta, Georgia.',
   ogImagePath = '/InfiniRiseLg.png',
   canonicalPath = '/',
   extraJsonLd,
@@ -27,11 +27,12 @@ const jsonLd = {
   '@type': 'Organization',
   name: 'InfiniRise Studios LLC',
   url: new URL('/', site).href,
+  description: 'InfiniRise Studios builds software products and web tools.',
   logo,
   founder: {
     '@type': 'Person',
     name: 'Joelle Silverio',
-    jobTitle: 'Principal Gameplay and Combat Designer',
+    jobTitle: 'Founder',
     sameAs: [linkedIn, huggingFace],
   },
 };
