@@ -168,7 +168,8 @@ header.is-sticky {
 
 .hero {
   padding: 4.5rem 0 3.5rem;
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+  /* .hero shares an element with .wrap, so the gradient bleeds past it to the viewport edges. */
+  border-image: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%) fill 0 // 0 100vmax;
 }
 
 .hero--split {
@@ -301,26 +302,129 @@ h2 {
   font-size: 1.65rem;
 }
 
-.lanes {
+.hero--lead {
+  padding: 6rem 0 5rem;
+  grid-template-columns: minmax(0, 2fr) minmax(8rem, 13rem);
+}
+
+.hero--lead h1 {
+  max-width: 15ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out,
+    transform 200ms ease-out;
+}
+
+.btn--primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-deep);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: #ffb54f;
+  border-color: #ffb54f;
+  color: var(--bg-deep);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  border-color: rgba(244, 241, 234, 0.3);
+  color: var(--ink);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+#focus {
+  padding: 5rem 0 4.5rem;
+}
+
+.focus-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-.lane {
+.focus-card {
   background: var(--bg-raised);
   border: 1px solid var(--line);
-  padding: 1.35rem 1.4rem 1.2rem;
+  border-top: 2px solid var(--gold);
+  padding: 1.6rem 1.5rem 1.4rem;
 }
 
-.lane h3 {
-  margin: 0 0 0.55rem;
-  font-size: 1.05rem;
+.focus-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
 }
 
-.lane p {
+.focus-card p {
   margin: 0;
   color: var(--muted);
+}
+
+.products-block {
+  padding: 4.5rem 0 5rem;
+  background: var(--bg-deep);
+  border-top: 1px solid var(--line);
+}
+
+.product {
+  max-width: 46rem;
+  padding: 2rem 2rem 2.1rem;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 159, 28, 0.14), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(0, 180, 216, 0.1), transparent 50%),
+    var(--bg);
+}
+
+.product__status {
+  margin: 0 0 0.6rem;
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.product__name {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.product__pitch {
+  margin: 0 0 1.5rem;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.1rem;
 }
 
 .title-grid {
@@ -690,8 +794,16 @@ footer {
   }
 
   .title-card:hover,
-  .title-card:focus-visible {
+  .title-card:focus-visible,
+  .btn:hover,
+  .btn:focus-visible {
     transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -709,12 +821,23 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .hero--lead {
+    padding-bottom: 3.5rem;
+  }
+
+  .hero--lead .hero-mark {
+    display: none;
+  }
+
   .hero-photo,
   .hero-mark {
     width: min(12rem, 55vw);
   }
 
-  .lanes,
+  .product {
+    padding: 1.5rem;
+  }
+
   .title-grid {
     grid-template-columns: 1fr;
   }

@@ -1,0 +1,26 @@
+---
+import { products } from '../data/products';
+---
+
+<section id="products" class="products-block">
+  <div class="wrap">
+    <div class="kicker-wrap">
+      <p class="kicker">Studio products</p>
+    </div>
+    <h2>What we're building</h2>
+    <div class="product-list">
+      {
+        products.map((product) => (
+          <article class="product reveal">
+            <p class="product__status">{product.status}</p>
+            <h3 class="product__name">{product.name}</h3>
+            <p class="product__pitch">{product.pitch}</p>
+            <a class="btn btn--ghost" href={product.ctaHref}>
+              {product.ctaLabel}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
